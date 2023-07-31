@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'forgetpassword_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -20,26 +19,26 @@ class _LoginScreenState extends State<LoginScreen> {
             children: [
               Center(
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 50.0,bottom: 20.0),
+                  padding: const EdgeInsets.only(top: 50.0,bottom: 10.0),
                   child: Image(
-                    image: AssetImage('assets/images/login.png'),
-                    height: 100,
-                    width: 100,
+                    image: AssetImage('assets/images/login.jpg'),
+                    height: 250,
+                    width: 150,
                   ),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(4.0),
                 child: Text(
                   "Login",
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 35,
                       fontStyle: FontStyle.normal,
                       fontWeight: FontWeight.bold),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(2.0),
                 child: Text(
                   "Login to continue using this app",
                   style: TextStyle(
@@ -50,11 +49,11 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(4.0),
                 child: Text(
                   "Email",
                   style: TextStyle(
-                    fontSize: 20,
+                    fontSize: 35,
                     fontStyle: FontStyle.normal,
                     fontWeight: FontWeight.bold,
                   ),
@@ -68,19 +67,19 @@ class _LoginScreenState extends State<LoginScreen> {
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(25.0),
 
-                        borderSide: BorderSide(color: Colors.blue)),
+                        borderSide: BorderSide()),
                     hintText: 'Enter your email',
-                    filled: true,
-                    fillColor: Colors.black12,
+                    prefixIcon: Icon(Icons.email_outlined)
+
                   ),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(4.0),
                 child: Text(
                   "Password",
                   style: TextStyle(
-                    fontSize: 20,
+                    fontSize: 35,
                     fontStyle: FontStyle.normal,
                     fontWeight: FontWeight.bold,
                   ),
@@ -93,6 +92,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   obscureText:_isObscureText,
                   decoration: InputDecoration(
                     hintText: 'Enter password',
+                   prefixIcon: Icon(Icons.password_outlined),
                    suffixIcon: IconButton(icon: Icon( _isObscureText
                        ? Icons.visibility_off
                        : Icons.visibility,), onPressed: () {
@@ -100,26 +100,24 @@ class _LoginScreenState extends State<LoginScreen> {
                       _isObscureText=!_isObscureText;
                      });
                    },),
-                    filled: true,
-                    fillColor: Colors.black12,
+
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(25.0),
-                        borderSide: BorderSide(color: Colors.blue)),
+                        borderSide: BorderSide()),
                   ),
                 ),
               ),
-              TextButton(onPressed:(){
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ForgetPasswordScreen()),
-                );
-              } , child:Text('Forget password?',
-                style: TextStyle(fontWeight:FontWeight.bold ,color: Colors.grey,fontSize: 14),
-             //  textAlign: TextAlign.right,
+             Padding(
+               padding: const EdgeInsets.all(8.0),
+               child: Text('Forget password?',
+                  style: TextStyle(fontWeight:FontWeight.bold ,color: Colors.grey,fontSize: 14),
+            textAlign: TextAlign.right,
+
 
     ),
+             ),
 
-              ),
+
               Padding(
                 padding: const EdgeInsets.only(top: 20.0),
                 child: Center(
